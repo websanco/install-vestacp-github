@@ -1,4 +1,4 @@
-# install-vestacp-github
+
 apt-get update  
 apt-get install $your_package  
 apt-get install yum  
@@ -12,6 +12,12 @@ service httpd stop
 
 yum install wget gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed autoconf automake libtool which patch mailx db4-devel  
 
-wget https://raw.githubusercontent.com/websanco/install-vestacp-github/master/Letscript.sh  
-chmod 777 ./Letscript.sh    
-./Letscript.sh    
+# install-vestacp-github
+curl -O http://vestacp.com/pub/vst-install.sh
+
+ash vst-install.sh --nginx yes --apache yes --phpfpm no --named no --remi yes --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota yes --exim yes --dovecot yes --spamassassin yes --clamav yes --softaculous yes --mysql yes --postgresql no --hostname sudomain_here --email email_here --password pass_here
+
+
+yum install git -y
+git clone https://github.com/letsencrypt/letsencrypt /opt/le
+cd /opt/le
