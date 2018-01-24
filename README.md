@@ -21,3 +21,24 @@ ash vst-install.sh --nginx yes --apache yes --phpfpm no --named no --remi yes --
 yum install git -y
 git clone https://github.com/letsencrypt/letsencrypt /opt/le
 cd /opt/le
+
+
+
+# install-vestacp- VULTR 521M
+bash vst-install.sh --nginx yes --apache yes --phpfpm no --named no --remi no --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota yes --exim yes --dovecot yes --spamassassin yes --clamav yes --softaculous no --mysql yes --postgresql no
+
+yum install git -y
+git clone https://github.com/letsencrypt/letsencrypt /opt/let
+service nginx stop
+service httpd stop
+cd /opt/let
+./letsencrypt-auto certonly --standalone -d b1.hostviet.pro
+
+rm -rf /usr/local/vesta/ssl/certificate.crt
+ln -s  /etc/letsencrypt/live/b1.hostviet.pro/cert.pem /usr/local/vesta/ssl/certificate.crt
+
+rm -rf /usr/local/vesta/ssl/certificate.key
+ln -s  /etc/letsencrypt/live/b1.hostviet.pro/privkey.pem /usr/local/vesta/ssl/certificate.key
+
+service vesta restart
+
