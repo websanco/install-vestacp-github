@@ -18,16 +18,16 @@ curl -O http://vestacp.com/pub/vst-install.sh
 ash vst-install.sh --nginx yes --apache yes --phpfpm no --named no --remi yes --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota yes --exim yes --dovecot yes --spamassassin yes --clamav yes --softaculous yes --mysql yes --postgresql no --hostname sudomain_here --email email_here --password pass_here
 
 
-yum install git -y
-git clone https://github.com/letsencrypt/letsencrypt /opt/le
-cd /opt/le
+yum install git -y  
+git clone https://github.com/letsencrypt/letsencrypt /opt/le  
+cd /opt/le  
 
 
 
 # install-vestacp- VULTR 521M
 bash vst-install.sh --nginx yes --apache yes --phpfpm no --named no --remi no --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota yes --exim yes --dovecot yes --spamassassin yes --clamav yes --softaculous no --mysql yes --postgresql no
 
-yum install git -y
+yum install git -y  
 git clone https://github.com/letsencrypt/letsencrypt /opt/le 
 service nginx stop 
 service httpd stop 
