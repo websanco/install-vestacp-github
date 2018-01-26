@@ -49,3 +49,15 @@ sudo ./Install.sh
 
 cd /etc/csf
 sh uninstall.sh
+
+Mã:
+nano /usr/local/vesta/conf/vesta.conf
+Thêm code kích hoạt này vào cuối file nhé
+Mã:
+FILEMANAGER_KEY=’ILOVEREO’
+Sau đó bấm Ctrl + O enter để lưu lại, ctrl + X để thoát ra
+
+Sau đó khởi động lại vesta Panel
+service vesta restart
+
+Vào vesta lại và kiểm tra thành quả
