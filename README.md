@@ -1,4 +1,7 @@
 
+GIFT https://www.vultr.com/?ref=7224032  
+https://m.do.co/c/f579d3db6d69  
+DONATE: http://paypal.me/OnlineServicesVN  
 apt-get update  
 apt-get install $your_package  
 apt-get install yum  
